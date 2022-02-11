@@ -1,7 +1,7 @@
 library ui_decoration;
 
 import 'package:flutter/material.dart';
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/textstyle.dart' as style;
 
 ButtonStyle simpleBlueButton = ElevatedButton.styleFrom(
   primary: Colors.blue[800],
@@ -12,7 +12,7 @@ ButtonStyle simpleBlueButton = ElevatedButton.styleFrom(
 
 InputDecoration inputDecoration(String hintText) => InputDecoration(
     hintText: hintText == 'null' ? null : hintText,
-    hintStyle: Style.hint,
+    hintStyle: style.hint,
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(10.0)),
       borderSide: BorderSide(
@@ -32,7 +32,7 @@ InputBorder noborderDecoration(Color color, double radius) =>
         borderSide: BorderSide.none);
 Decoration itemSelectionDecoration(double radius, Color color) => BoxDecoration(
       color: color,
-      border: Border.all(color: color, width: 1.0),
+      border: Border.all(color: color),
       borderRadius: BorderRadius.all(
         Radius.circular(radius),
       ),

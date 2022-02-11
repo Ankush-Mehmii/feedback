@@ -1,5 +1,4 @@
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/textstyle.dart' as style;
 import 'package:feedback/custom/button/custombutton.dart';
 import 'package:feedback/custom/customAppBar.dart';
 import 'package:feedback/custom/textfield/custom_textfield.dart';
@@ -13,7 +12,7 @@ class FeedbackDesign1 extends StatefulWidget {
 }
 
 class _FeedbackDesign1State extends State<FeedbackDesign1> {
-  List<bool> isTypeSelected = [false, false, false, false, false];
+  List<bool> isTypeSelected = <bool>[false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +26,18 @@ class _FeedbackDesign1State extends State<FeedbackDesign1> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   const SizedBox(
                     height: 10.0,
                   ),
                   Text(
                     "Please select the type of the feedback",
-                    style: Style.black38Med,
+                    style: style.black38Med,
                   ),
                   const SizedBox(height: 20.0),
                   InkWell(
@@ -107,13 +106,13 @@ class _FeedbackDesign1State extends State<FeedbackDesign1> {
     );
   }
 
-  buildNumberField() {
+  Widget buildNumberField() {
     return const CustomTextField(
       hintText: "Email(optional)",
     );
   }
 
-  buildFeedbackForm() {
+  Widget buildFeedbackForm() {
     return const SizedBox(
         height: 200,
         child: CustomTextField(
@@ -126,15 +125,15 @@ class _FeedbackDesign1State extends State<FeedbackDesign1> {
     return Container(
       padding: const EdgeInsets.all(6.0),
       child: Row(
-        children: [
+        children: <Widget>[
           Icon(
             isSelected! ? Icons.check_circle : Icons.circle,
             color: isSelected ? Colors.blue : Colors.grey,
           ),
           const SizedBox(width: 10.0),
           Text(title!,
-              style: Style.checkItemTextStyle(
-                  isSelected ? Colors.blue : Colors.grey)),
+              style: style
+                  .checkItemTextStyle(isSelected ? Colors.blue : Colors.grey)),
         ],
       ),
     );

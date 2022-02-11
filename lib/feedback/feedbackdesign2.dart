@@ -1,5 +1,5 @@
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/decoration.dart' as properties;
+import 'package:feedback/constants/textstyle.dart' as style;
 import 'package:feedback/custom/button/custombutton.dart';
 import 'package:feedback/custom/customAppBar.dart';
 import 'package:feedback/custom/textfield/custom_textfield.dart';
@@ -14,7 +14,7 @@ class FeedbackDesign2 extends StatefulWidget {
 }
 
 class _FeedbackDesign2State extends State<FeedbackDesign2> {
-  List<bool> isTypeSelected = [false, false, false, false, false];
+  List<bool> isTypeSelected = <bool>[false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +28,22 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     "Rate Your Experience",
-                    style: Style.blackMed26,
+                    style: style.blackMed26,
                   ),
                   const SizedBox(
                     height: 10.0,
                   ),
                   Text(
                     "Are you Satisfied with the service?",
-                    style: Style.black38Med,
+                    style: style.black38Med,
                   ),
                   const SizedBox(height: 16.0),
                   Container(
@@ -53,13 +53,10 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
                       initialRating: 5,
                       minRating: 1,
                       unratedColor: Colors.grey.shade400,
-                      direction: Axis.horizontal,
-                      allowHalfRating: false,
-                      itemCount: 5,
                       itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
                       itemBuilder: (context, i) =>
                           buildRatingItem(title: (i+1).toString()),
-                      onRatingUpdate: (rating) {
+                      onRatingUpdate: (double rating) {
                         print(rating);
                       },
                     ),
@@ -69,12 +66,12 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
                   ),
                   Text(
                     "Tell us what can be improved?",
-                    style: Style.blackBold,
+                    style: style.blackBold,
                   ),
                   const SizedBox(
                     height: 12.0,
                   ),
-                  Wrap(spacing: 10.0, runSpacing: 16.0, children: [
+                  Wrap(spacing: 10.0, runSpacing: 16.0, children: <Widget>[
                     InkWell(
                       child: buildTopicItem(
                           title: "Suggestions", isSelected: isTypeSelected[4]),
@@ -142,7 +139,7 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
     );
   }
 
-  buildFeedbackForm() {
+  Widget buildFeedbackForm() {
     return const SizedBox(
         height: 200,
         child: CustomTextField(
@@ -160,9 +157,9 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
       alignment: Alignment.center,
       padding: const EdgeInsets.all(6.0),
       margin: const EdgeInsets.only(right: 10.0),
-      child: Text(title!, style: Style.checkItemTextStyle(Colors.white)),
+      child: Text(title!, style: style.checkItemTextStyle(Colors.white)),
       decoration:
-          Properties.itemSelectionDecoration(10.0, Colors.red),
+          properties.itemSelectionDecoration(10.0, Colors.red),
     );
   }
 
@@ -174,9 +171,9 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
       padding: const EdgeInsets.all(6.0),
       margin: const EdgeInsets.only(right: 10.0),
       child: Text(title!,
-          style: Style.checkItemTextStyle(
+          style: style.checkItemTextStyle(
               isSelected! ? Colors.white : Colors.grey.shade100)),
-      decoration: Properties.itemSelectionDecoration(
+      decoration: properties.itemSelectionDecoration(
           10.0, isSelected ? Colors.red : Colors.grey.shade400),
     );
   }
@@ -185,9 +182,9 @@ class _FeedbackDesign2State extends State<FeedbackDesign2> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
       child: Text(title!,
-          style: Style.checkItemTextStyle(
+          style: style.checkItemTextStyle(
               isSelected! ? Colors.white : Colors.grey.shade100)),
-      decoration: Properties.itemSelectionDecoration(
+      decoration: properties.itemSelectionDecoration(
           10.0, isSelected ? Colors.red : Colors.grey.shade400),
     );
   }

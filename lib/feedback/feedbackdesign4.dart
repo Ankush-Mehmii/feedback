@@ -1,14 +1,12 @@
 import 'dart:io';
 
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/decoration.dart' as properties;
+import 'package:feedback/constants/textstyle.dart' as style;
 import 'package:feedback/custom/button/custombutton.dart';
 import 'package:feedback/custom/customAppBar.dart';
-import 'package:feedback/custom/textfield/custom_textfield2.dart';
+import 'package:feedback/custom/textfield/Custom_textfield3.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../custom/textfield/Custom_textfield3.dart';
 
 class FeedbackDesign4 extends StatefulWidget {
   const FeedbackDesign4({Key? key}) : super(key: key);
@@ -19,9 +17,9 @@ class FeedbackDesign4 extends StatefulWidget {
 
 class _FeedbackDesign4State extends State<FeedbackDesign4> {
   String? value;
-  final List<XFile> _imageList = [];
+  final List<XFile> _imageList = <XFile>[];
   int val = 1;
-  List<String> lst = ['Suggestion', 'Bug', 'Other'];
+  List<String> lst = <String>['Suggestion', 'Bug', 'Other'];
   int selectedIndex = 0;
 
   final ImagePicker _picker = ImagePicker();
@@ -37,15 +35,15 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     "Email",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -59,7 +57,7 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
                   ),
                   Text(
                     "Name",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -73,7 +71,7 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
                   ),
                   Text(
                     "How can we improve?",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(height: 10.0),
                   const CustomFloatingTextField(
@@ -83,7 +81,7 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
                   const SizedBox(height: 10.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
+                    children: <Widget>[
                       customRadio(lst[0], 0),
                       customRadio(lst[1], 1),
                       customRadio(lst[2], 2)
@@ -93,7 +91,7 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
                     height: 10.0,
                   ),
                   OutlinedButton(
-                      style: Properties.buttonStyle,
+                      style: properties.buttonStyle,
                       onPressed: () {
                         imageSelect();
                       },
@@ -131,17 +129,17 @@ class _FeedbackDesign4State extends State<FeedbackDesign4> {
       onTap: () => changeIndex(index),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
+        children: <Widget>[
           Container(
             margin: const EdgeInsets.only(right: 4.0),
             height: 14.0,
             width: 14.0,
-            decoration: Properties.radioButtonDecoration(
+            decoration: properties.radioButtonDecoration(
                 selectedIndex == index ? Colors.green : Colors.grey),
           ),
           Text(
             txt,
-            style: Style.checkItemTextStyle(
+            style: style.checkItemTextStyle(
                 selectedIndex == index ? Colors.green : Colors.grey),
           ),
         ],

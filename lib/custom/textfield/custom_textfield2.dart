@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/decoration.dart' as properties;
+import 'package:feedback/constants/textstyle.dart' as style;
 
 class CustomFocusedTextField extends StatelessWidget {
-  final TextEditingController? controller;
-  final int maxLines;
-  final String? hintText;
-
   const CustomFocusedTextField({
     Key? key,
     this.controller,
     this.maxLines = 1,
     this.hintText,
   }) : super(key: key);
+  final TextEditingController? controller;
+  final int maxLines;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +19,9 @@ class CustomFocusedTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
           hintText: hintText == 'null' ? null : hintText,
-          hintStyle: Style.hint2,
-          focusedBorder: Properties.borderDecoration(Colors.green, 10.0),
-          enabledBorder: Properties.borderDecoration(Colors.grey, 10.0)),
+          hintStyle: style.hint2,
+          focusedBorder: properties.borderDecoration(Colors.green, 10.0),
+          enabledBorder: properties.borderDecoration(Colors.grey, 10.0)),
     );
   }
 }

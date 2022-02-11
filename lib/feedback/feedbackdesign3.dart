@@ -1,5 +1,5 @@
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/decoration.dart' as properties;
+import 'package:feedback/constants/textstyle.dart' as style;
 import 'package:feedback/custom/button/custombutton.dart';
 import 'package:feedback/custom/customAppBar.dart';
 import 'package:feedback/custom/textfield/custom_textfield2.dart';
@@ -13,7 +13,7 @@ class FeedbackDesign3 extends StatefulWidget {
 }
 
 class _FeedbackDesign3State extends State<FeedbackDesign3> {
-  List<String> topics = [
+  List<String> topics = <String>[
     "Suggestions",
     "Login Trouble",
     "Phone Number Related",
@@ -33,22 +33,22 @@ class _FeedbackDesign3State extends State<FeedbackDesign3> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     "We'd Love To Know Your Experience",
-                    style: Style.greenMed20,
+                    style: style.greenMed20,
                   ),
                   const SizedBox(
                     height: 10.0,
                   ),
                   Text(
                     "Email(optional)",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -61,7 +61,7 @@ class _FeedbackDesign3State extends State<FeedbackDesign3> {
                   ),
                   Text(
                     "What was the reason for your visit?",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(
                     height: 10.0,
@@ -70,7 +70,7 @@ class _FeedbackDesign3State extends State<FeedbackDesign3> {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 8,
                     ),
-                    decoration: Properties.dropdownDecoration,
+                    decoration: properties.dropdownDecoration,
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                           value: value,
@@ -88,7 +88,7 @@ class _FeedbackDesign3State extends State<FeedbackDesign3> {
                   const SizedBox(height: 10.0),
                   Text(
                     "Describe your experience",
-                    style: Style.black14Med,
+                    style: style.black14Med,
                   ),
                   const SizedBox(height: 10.0),
                    const CustomFocusedTextField(
@@ -108,10 +108,10 @@ class _FeedbackDesign3State extends State<FeedbackDesign3> {
     );
   }
 
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+  DropdownMenuItem<String> buildMenuItem(String item) =>  DropdownMenuItem<String>(
       value: item,
       child: Text(
         item,
-        style: Style.black14Med,
+        style: style.black14Med,
       ));
 }

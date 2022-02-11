@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:feedback/constants/decoration.dart' as Properties;
-import 'package:feedback/constants/textstyle.dart' as Style;
+import 'package:feedback/constants/decoration.dart' as properties;
+import 'package:feedback/constants/textstyle.dart' as style;
 
 class CustomRaisedButton extends StatelessWidget {
-  final VoidCallback? onPressed;
-  final String? text;
-
   const CustomRaisedButton({
     Key? key,
     @required this.onPressed,
     @required this.text,
   }) : super(key: key);
+  final VoidCallback? onPressed;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +17,11 @@ class CustomRaisedButton extends StatelessWidget {
       height: 60.0,
       width: double.infinity,
       child: ElevatedButton(
-        style: Properties.simpleBlueButton,
+        style: properties.simpleBlueButton,
         onPressed: onPressed,
         child: Text(
           text!,
-          style: Style.whiteBoldTextStyle,
+          style: style.whiteBoldTextStyle,
         ),
       ),
     );

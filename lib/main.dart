@@ -1,9 +1,9 @@
 import 'package:feedback/custom/button/simplebutton.dart';
+import 'package:feedback/feedback/feedbackdesign1.dart';
 import 'package:feedback/feedback/feedbackdesign2.dart';
 import 'package:feedback/feedback/feedbackdesign3.dart';
 import 'package:feedback/feedback/feedbackdesign4.dart';
 import 'package:flutter/material.dart';
-import 'feedback/feedbackdesign1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,34 +40,33 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: <Widget>[
               CustomButton(
                 onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const FeedbackDesign1())),
+                    MaterialPageRoute<dynamic>(
+                        builder: (BuildContext context) => const FeedbackDesign1())),
                 text: 'Feedback Design 1',
               ),
               CustomButton(
                 onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const FeedbackDesign2())),
+                    MaterialPageRoute<dynamic>(
+                        builder: (BuildContext context) => const FeedbackDesign2())),
                 text: 'Feedback Design 2',
               ),
               CustomButton(
                 onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const FeedbackDesign3())),
+                    MaterialPageRoute<dynamic>(
+                        builder: (BuildContext context) => const FeedbackDesign3())),
                 text: 'Feedback Design 3',
               ),
               CustomButton(
                 onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const FeedbackDesign4())),
+                    MaterialPageRoute<dynamic>(
+                        builder: (BuildContext context) => const FeedbackDesign4())),
                 text: 'Feedback Design 4',
               ),
             ],
