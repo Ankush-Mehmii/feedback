@@ -1,9 +1,11 @@
+import 'package:feedback/Authentication/authrepo.dart';
 import 'package:feedback/custom/button/simplebutton.dart';
-import 'package:feedback/feedback/feedbackdesign1.dart';
+import 'package:feedback/feedback/feedback1/feedback1ui.dart';
 import 'package:feedback/feedback/feedbackdesign2.dart';
 import 'package:feedback/feedback/feedbackdesign3.dart';
 import 'package:feedback/feedback/feedbackdesign4.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const MyHomePage()
     );
   }
 }
@@ -45,7 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute<dynamic>(
-                        builder: (BuildContext context) => const FeedbackDesign1())),
+                        builder: (BuildContext context) => RepositoryProvider<AuthRepository>(
+        create: (context)=> AuthRepository(),
+        child: const FeedbackDesign1(),
+      ),)),
                 text: 'Feedback Design 1',
               ),
               CustomButton(
